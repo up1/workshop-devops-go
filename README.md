@@ -25,7 +25,7 @@ $docker-compose logs --follow
 
 ## Step 2 :: Design build pipeline with Jenkins
 * working with free style job
-* working with Jenkinsfile (Pipeline as a Code)
+* working with [Jenkinsfile](https://www.jenkins.io/doc/book/pipeline/jenkinsfile/) (Pipeline as a Code)
 
 Design youe pipeline
 * Pull code
@@ -34,3 +34,7 @@ Design youe pipeline
 * Build Docker image
 * Push Docker image to REgistry server
 * Deploy to target server
+
+List of Jenkins's plugins
+* [Publish Over SSH](https://plugins.jenkins.io/publish-over-ssh/)
+* [Kubernetes Continuous Deploy Plugin](https://www.jenkins.io/doc/pipeline/steps/kubernetes-cd/)
