@@ -40,8 +40,10 @@ Design youe pipeline
 * Build
 * Testing
 * Build Docker image
-* Push Docker image to REgistry server
+* Push Docker image to Registry server
 * Deploy to target server
+  * Docker
+  * Kubernetes cluster 
 
 List of Jenkins's plugins
 * [Publish Over SSH](https://plugins.jenkins.io/publish-over-ssh/)
