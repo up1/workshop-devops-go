@@ -38,11 +38,10 @@ pipeline {
             }
         }
 
-        stage('deploy to dev') {
+        stage('deploy to dev') { 
             steps {
-                sshagent(credentials : ['dev-id']) {
-                    sh 'ssh -o StrictHostKeyChecking=no -l root 128.199.146.235 docker image pull $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME'
-                }
+                sshPublisher(publishers: [sshPublisherDesc(configName: 'dev-server', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '''docker-compose -f docker-compose-deploy.yml down
+docker-compose -f docker-compose-deploy.yml up -d''', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: '', sourceFiles: 'docker-compose-deploy.yml')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
             }
         }
     }
