@@ -8,13 +8,11 @@ pipeline {
     environment {
         DOCKER_CREDENTIAL_ID = 'dockerhub-id'
         GITHUB_CREDENTIAL_ID = 'github-id'
-        DEV_CREDENTIAL_ID = 'dev-id'
         K8S_ID = 'k8s-id'
         REGISTRY = 'docker.io'
         DOCKERHUB_NAMESPACE = 'somkiat'
         GITHUB_ACCOUNT = 'up1'
         APP_NAME = 'demo-api'
-        SERVER = '178.128.16.180'
     }
 
     stages {
