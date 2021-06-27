@@ -1,5 +1,9 @@
 #!/bin/bash
 echo "Starting api..."
+
+docker-compose -f docker-compose-deploy.yml down
+docker-compose -f docker-compose-deploy.yml up -d
+
 STATUS="starting"
 while [ "$STATUS" != "healthy" ]
 do
