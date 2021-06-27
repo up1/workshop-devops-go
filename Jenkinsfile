@@ -39,10 +39,11 @@ pipeline {
         }
 
         stage('deploy to dev') {
-            sshagent(credentials : ['dev-id']) {
-            sh 'ssh -v root@128.199.200.79'
-            sh 'docker image pull $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME'
-        }
+            steps {
+                sshagent(credentials : ['dev-id']) {
+                sh 'ssh -v root@128.199.200.79'
+                sh 'docker image pull $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME'
+            }
         }
     }
 }
