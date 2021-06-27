@@ -23,6 +23,14 @@ $docker-compose ps
 $docker-compose logs --follow
 ```
 
+Deploy with Docker compose
+```
+$docker-compose -f docker-compose-deploy.yml build
+$docker-compose -f docker-compose-deploy.yml up -d
+$docker-compose -f docker-compose-deploy.yml ps
+$docker-compose -f docker-compose-deploy.yml logs --follow
+```
+
 ## Step 2 :: Design build pipeline with Jenkins
 * working with free style job
 * working with [Jenkinsfile](https://www.jenkins.io/doc/book/pipeline/jenkinsfile/) (Pipeline as a Code)
