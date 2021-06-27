@@ -26,3 +26,11 @@ $docker-compose logs --follow
 ## Step 2 :: Design build pipeline with Jenkins
 * working with free style job
 * working with Jenkinsfile (Pipeline as a Code)
+
+Design youe pipeline
+* Pull code
+* Build
+* Testing
+* Build Docker image
+* Push Docker image to REgistry server
+* Deploy to target server
