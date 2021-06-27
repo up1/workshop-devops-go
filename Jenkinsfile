@@ -13,6 +13,7 @@ pipeline {
         DOCKERHUB_NAMESPACE = 'somkiat'
         GITHUB_ACCOUNT = 'up1'
         APP_NAME = 'demo-api'
+        SERVER = '178.128.16.180'
     }
 
     stages {
@@ -41,8 +42,8 @@ pipeline {
         stage('deploy to dev') { 
             steps {
                 sshPublisher(publishers: [sshPublisherDesc(configName: 'dev-server', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '''docker-compose -f docker-compose-deploy.yml down
-docker-compose -f docker-compose-deploy.yml up -d''', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: '', sourceFiles: 'docker-compose-deploy.yml')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
-                sh 'sh waiting.sh'
+docker-compose -f docker-compose-deploy.yml up -d
+sh waiting.sh''', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: '', sourceFiles: 'docker-compose-deploy.yml,waiting.sh')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
             }
         }
     }
