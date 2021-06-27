@@ -1,8 +1,5 @@
 pipeline {
-  agent {
-    node {
-    }
-  }
+    agent any
 
     parameters {
         string(name:'TAG_NAME',defaultValue: '',description:'')
