@@ -42,6 +42,7 @@ pipeline {
             steps {
                 sshPublisher(publishers: [sshPublisherDesc(configName: 'dev-server', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '''docker-compose -f docker-compose-deploy.yml down
 docker-compose -f docker-compose-deploy.yml up -d''', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: '', sourceFiles: 'docker-compose-deploy.yml')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+                sh 'sh waiting.sh'
             }
         }
     }
