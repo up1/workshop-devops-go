@@ -45,4 +45,4 @@ Design youe pipeline
 
 List of Jenkins's plugins
 * [Publish Over SSH](https://plugins.jenkins.io/publish-over-ssh/)
-* [Kubernetes Continuous Deploy Plugin](https://www.jenkins.io/doc/pipeline/steps/kubernetes-cd/)
+* [Kubernetes Continuous Deploy Plugin 1.0.0](https://www.jenkins.io/doc/pipeline/steps/kubernetes-cd/)
