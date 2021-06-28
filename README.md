@@ -5,6 +5,12 @@
 * Docker compose
 * CI/CD with [Jenkins](https://www.jenkins.io/)
 
+## Step 0 :: Preparaion
+```
+$git clone https://github.com/up1/workshop-devops-go.git
+cd workshop-devops-go
+```
+
 ## Step 1 :: Build and Run API with Docker
 
 Working with Docker command
