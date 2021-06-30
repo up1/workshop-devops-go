@@ -2,6 +2,7 @@
 * API with [Go](https://golang.org/)
 * Docker
   * Build image with [multi-stage build](https://docs.docker.com/develop/develop-images/multistage-build/)
+  * [Best practices for writing Dockerfiles](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
 * Docker compose
 * CI/CD with [Jenkins](https://www.jenkins.io/)
 
