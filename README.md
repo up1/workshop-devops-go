@@ -72,7 +72,7 @@ $docker swarm join-token manager
 
 Deploy stack with docker-compose file (v3+)
 ```
-$docker stack deploy --compose-file docker-compose.yml demostack
+$docker stack deploy --compose-file docker-compose-deploy.yml demostack
 $docker stack services demostack
 ```
 
@@ -86,10 +86,10 @@ $docker service ps <service name>
 
 # Example scale to 5
 ```
-$docker service scale demostack_web=5
+$docker service scale demostack_api=5
 ```
 
-demostack_web scaled to 5
+demostack_api scaled to 5
 overall progress: 5 out of 5 tasks
 1/5: running   [==================================================>]
 2/5: running   [==================================================>]
