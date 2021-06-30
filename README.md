@@ -55,3 +55,65 @@ Design youe pipeline
 List of Jenkins's plugins
 * [Publish Over SSH](https://plugins.jenkins.io/publish-over-ssh/)
 * [Kubernetes Continuous Deploy Plugin 1.0.0](https://www.jenkins.io/doc/pipeline/steps/kubernetes-cd/)
+
+## Step 3 :: Deploy with docker swarm
+
+Create Docker Swarm
+```
+$docker swarm init
+$docker node ls
+```
+
+See join-token command
+```
+$docker swarm join-token worker
+$docker swarm join-token manager
+```
+
+Deploy stack with docker-compose file (v3+)
+```
+$docker stack deploy --compose-file docker-compose.yml demostack
+$docker stack services demostack
+```
+
+# Scaling service
+```
+docker service ls
+$docker service scale <service name>=<number of replica(s)>
+$docker service ls
+$docker service ps <service name>
+```
+
+# Example scale to 5
+```
+$docker service scale demostack_web=5
+```
+
+demostack_web scaled to 5
+overall progress: 5 out of 5 tasks
+1/5: running   [==================================================>]
+2/5: running   [==================================================>]
+3/5: running   [==================================================>]
+4/5: running   [==================================================>]
+5/5: running   [==================================================>]
+verify: Service converged
+
+Testing with curl and see result
+```
+$curl http://localhost:8080/
+```
+
+Delete services
+```
+$docker service rm <service name>
+```
+
+Delete stack
+```
+$docker stack rm demostack
+```
+
+Leave node from Swarm
+```
+$docker swarm leave --force
+```
