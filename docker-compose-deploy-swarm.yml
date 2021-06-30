@@ -1,0 +1,15 @@
+version: "3"
+services:
+  api:
+    image: somkiat/demo-api
+    user: "0:0"
+    ports:
+      - 8000:1323
+    deploy:
+      mode: replicated
+      replicas: 5
+    healthcheck:
+      test: ["CMD-SHELL", "wget http://localhost:1323"]
+      interval: 5s
+      timeout: 2s
+      retries: 15
