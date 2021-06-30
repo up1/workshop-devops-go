@@ -100,7 +100,7 @@ verify: Service converged
 
 Testing with curl and see result
 ```
-$curl http://localhost:8080/
+$curl http://localhost:8000/
 ```
 
 Delete services
