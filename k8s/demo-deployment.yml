@@ -1,0 +1,30 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: demo-api
+  labels:
+    name: api
+spec:
+  replicas: 3
+  revisionHistoryLimit: 1
+  selector:
+    matchLabels:
+      name: api
+  template:
+    metadata:
+      labels:
+        name: api
+    spec:
+      containers:
+      - name: demo-api
+        image: somkiat/demo-api
+        ports:
+          - containerPort: 1323
+            protocol: TCP
+        resources:
+          limits:
+            memory: 512Mi
+            cpu: "1"
+          requests:
+            memory: 256Mi
+            cpu: "0.2"
