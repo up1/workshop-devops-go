@@ -32,7 +32,7 @@ $docker-compose logs --follow
 
 Deploy with shell script
 ```
-$sh deploy.sk
+$sh deploy.sh
 $docker-compose ps
 $docker-compose logs --follow
 ```
