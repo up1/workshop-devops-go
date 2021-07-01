@@ -1,13 +1,17 @@
 #!/bin/bash
-echo "Starting api..."
-
-docker-compose -f docker-compose-deploy.yml down
-docker-compose -f docker-compose-deploy.yml up -d
+echo "Starting db..."
+docker-compose down
+docker-compose build
+docker-compose up -d db
 
 STATUS="starting"
 while [ "$STATUS" != "healthy" ]
 do
-    STATUS=$(docker inspect --format {{.State.Health.Status}} api)
+    STATUS=$(docker inspect --format {{.State.Health.Status}} db)
     echo "API state = $STATUS"
     sleep 5
 done
+
+echo "Starting api..."
+docker-compose up -d api
+echo "Finish.."

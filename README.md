@@ -30,13 +30,18 @@ $docker-compose ps
 $docker-compose logs --follow
 ```
 
-Deploy with Docker compose
+Deploy with shell script
 ```
-$docker-compose -f docker-compose-deploy.yml build
-$docker-compose -f docker-compose-deploy.yml up -d
-$docker-compose -f docker-compose-deploy.yml ps
-$docker-compose -f docker-compose-deploy.yml logs --follow
+$sh deploy.sk
+$docker-compose ps
+$docker-compose logs --follow
 ```
+
+URL for testing
+* http://localhost:8000/accounts/1
+* http://localhost:8000/accounts/2
+* http://localhost:8000/accounts/3
+
 
 ## Step 2 :: Design build pipeline with Jenkins
 * working with free style job
