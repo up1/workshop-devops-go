@@ -81,7 +81,7 @@ $docker stack deploy --compose-file docker-compose-deploy.yml demostack
 $docker stack services demostack
 ```
 
-# Scaling service
+Scaling service
 ```
 docker service ls
 $docker service scale <service name>=<number of replica(s)>
@@ -89,7 +89,7 @@ $docker service ls
 $docker service ps <service name>
 ```
 
-# Example scale to 5
+Example scale to 5
 ```
 $docker service scale demostack_api=5
 ```
@@ -121,4 +121,11 @@ $docker stack rm demostack
 Leave node from Swarm
 ```
 $docker swarm leave --force
+```
+
+## Step 4 :: Deploy with Kubernetes
+```
+$kubectl get node
+$kubectl apply -f k8s/
+$kubectl get all
 ```
