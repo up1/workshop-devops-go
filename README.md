@@ -9,6 +9,13 @@
   * [SonarQube](https://www.sonarqube.org/)
   * [Sonar Scanner](https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/)
 
+sonar-scanner.properties
+```
+sonar.host.url=http://128.199.199.84:9000
+sonar.login=xxx
+sonar.password=xxx
+```
+
 ## Step 0 :: Preparaion
 ```
 $git clone https://github.com/up1/workshop-devops-go.git
