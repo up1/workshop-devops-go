@@ -5,6 +5,9 @@
   * [Best practices for writing Dockerfiles](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
 * Docker compose
 * CI/CD with [Jenkins](https://www.jenkins.io/)
+* Static Code Analysis
+  * [SonarQube](https://www.sonarqube.org/)
+  * [Sonar Scanner](https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/)
 
 ## Step 0 :: Preparaion
 ```
