@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "f84db595-5aa1-424d-b6a6-2f3657271d8a",
+		"_postman_id": "b121d0d8-7eb4-4ea3-b4ef-fe91d3792475",
 		"name": "imc-20211029",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -48,13 +48,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://128.199.80.111:8000/accounts/1",
+					"raw": "http://159.223.85.162:8000/accounts/1",
 					"protocol": "http",
 					"host": [
-						"128",
-						"199",
-						"80",
-						"111"
+						"159",
+						"223",
+						"85",
+						"162"
 					],
 					"port": "8000",
 					"path": [
