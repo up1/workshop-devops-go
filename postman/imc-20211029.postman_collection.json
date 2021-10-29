@@ -1,0 +1,69 @@
+{
+	"info": {
+		"_postman_id": "f84db595-5aa1-424d-b6a6-2f3657271d8a",
+		"name": "imc-20211029",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get account by id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"ID and Name\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.ID).to.eql('1');",
+							"    pm.expect(jsonData.name).to.eql('Demo account 1');",
+							"});",
+							"",
+							"var schema = {",
+							"    \"type\": \"object\",",
+							"    \"properties\": {",
+							"        \"ID\": {",
+							"        \"type\": \"string\"",
+							"        }",
+							"    },",
+							"    \"required\": [ \"ID\", \"name\" ]",
+							"};",
+							"",
+							"var data = pm.response.json();",
+							"",
+							"pm.test('Schema is valid', function () {",
+							"    pm.expect(tv4.validate(data, schema)).to.be.true;",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://128.199.80.111:8000/accounts/1",
+					"protocol": "http",
+					"host": [
+						"128",
+						"199",
+						"80",
+						"111"
+					],
+					"port": "8000",
+					"path": [
+						"accounts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
