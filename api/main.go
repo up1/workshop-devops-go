@@ -3,23 +3,25 @@ package main
 import (
 	"demo/db"
 	"net/http"
+	"os"
 
 	"github.com/labstack/echo/v4"
 	"github.com/sirupsen/logrus"
 )
 
 func main() {
-	addressDb := "postgres://data:password@db:5432/data?sslmode=disable"
+	// addressDb := "postgres://data:password@db:5432/data?sslmode=disable"
+	addressDb := os.Getenv("DB_URL")
 	dbClient := db.NewPostgresClient(addressDb)
-	h := &Handler{ dbClient: dbClient }
-	
+	h := &Handler{dbClient: dbClient}
+
 	e := echo.New()
 	e.GET("/accounts/:id", h.Home)
 	e.Logger.Fatal(e.Start(":1323"))
 }
 
 type Handler struct {
-	dbClient        db.DbClient
+	dbClient db.DbClient
 }
 
 func (h *Handler) Home(c echo.Context) error {
